@@ -12,4 +12,7 @@ const Category = connection.define('categories', {
     }
 });
 
+////////// SINCRONIZANDO TABELA NO BANCO DE DADOS \\\\\\\\\\
+//Category.sync({force: true});
+
 module.exports = Category;

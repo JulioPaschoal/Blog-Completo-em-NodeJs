@@ -8,6 +8,11 @@ const connection = require("./database/database");
 const categoriesController = require("./controller/CategoriesController");
 const articlesController = require("./controller/ArticlesController");
 
+
+////////// IMPORTANDO OS MODEL \\\\\\\\\\
+const Article = require("./model/Article");
+const Category = require("./model/Category");
+
 ////////// CONFIGURANDO VIEW ENGINE \\\\\\\\\\
 app.set('view engine', 'ejs');
 

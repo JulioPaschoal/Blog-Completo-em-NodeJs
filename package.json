@@ -1,7 +1,7 @@
 {
   "name": "blog-completo-em-nodejs",
   "version": "1.0.0",
-  "description": "Blog Completo em NodeJs",
+  "description": "BLOG COMPLETO EM NODEJS E MYSQL",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/JulioPaschoal/Blog-Completo-em-NodeJs.git"
   },
-  "author": "JulioPaschoal",
+  "author": "JULIO PASCHOAL",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JulioPaschoal/Blog-Completo-em-NodeJs/issues"

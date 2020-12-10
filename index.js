@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 ////////// CONFIGURANDO ARQUIVOS STATIC \\\\\\\\\\
 app.use(express.static('public'));
-
+ 
 ////////// CONFIGURANDO BODY PARSER \\\\\\\\\\
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

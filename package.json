@@ -1,7 +1,7 @@
 {
   "name": "blog-completo-em-nodejs",
   "version": "1.0.0",
-  "description": "BLOG COMPLETO EM NODEJS E MYSQL",
+  "description": "Blog em NodeJs e Mysql",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/JulioPaschoal/Blog-Completo-em-NodeJs.git"
   },
-  "author": "JULIO PASCHOAL",
+  "author": "JulioPaschoal",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JulioPaschoal/Blog-Completo-em-NodeJs/issues"
@@ -19,10 +19,9 @@
   "homepage": "https://github.com/JulioPaschoal/Blog-Completo-em-NodeJs#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "ejs": "^3.1.5",
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5",
-    "slugify": "^1.4.6"
+    "mysql2": "^1.7.0",
+    "sequelize": "^6.3.5"
   }
 }

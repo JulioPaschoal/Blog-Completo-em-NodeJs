@@ -1,7 +1,20 @@
 <%- include('../../partials/header'); %>
-<%- include('../../partials/navbar'); %>
+    <%- include('../../partials/navbar'); %>
 
-    <body>
-        <h2>Bem vindo! Isso é um teste</h2>
-    </body>
-    <%- include('../../partials/footer'); %>
+        <div class="container">
+            <hr>
+            <div class="card">
+                <div class="card-header">
+                    <H2>Cadastro de Categoria</H2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/category/save">
+                        <input class="form-control" type="text" name="title"
+                            placeholder="Defina o título da categoria"><br>
+                        <button class="btn btn-success">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <%- include('../../partials/footer'); %>

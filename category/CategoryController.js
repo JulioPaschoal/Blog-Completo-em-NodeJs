@@ -24,7 +24,7 @@ router.post("/category/save", (req, res) => {
             title: title,
             slug: slugify(title)
         }).then(() => {
-            res.redirect("/");
+            res.redirect("/admin/category");
         });
     } else {
         res.redirect("/admin/category/new");
@@ -35,7 +35,7 @@ router.post("/category/save", (req, res) => {
 router.post("/category/delete", (req, res) => {
     var id = req.body.id;
     if (id != undefined) {
-        // VERIFICAR SE O ID È N UMERICO \\
+        // VERIFICAR SE O ID È NUMERICO \\
         if (!isNaN(id)) {
             Category.destroy({
                 where: {
@@ -44,7 +44,7 @@ router.post("/category/delete", (req, res) => {
             }).then(() => {
                 res.redirect("/admin/category");
             });
-        } else {// SE O ID NAO FOR UM \\
+        } else {// SE O ID NAO FOR UM NUMERO \\
             res.redirect("/admin/category");
         }
     } else { // SE O ID FOR NULO \\
@@ -52,5 +52,36 @@ router.post("/category/delete", (req, res) => {
     }
 });
 
+
+// ROTA PARA EDITAR UMA CATEGORIA \\
+router.get("/admin/category/edit/:id", (req, res) => {
+    var id = req.params.id;
+    if (isNaN(id)) {
+        res.redirect("/admin/category");
+    }
+    Category.findByPk(id).then(Category => {
+        if (Category != undefined) {
+            res.render("admin/category/edit", { Category: Category });
+        } else {
+            res.redirect("/admin/category");
+        }
+    }).then(erro => {
+        res.redirect("/admin/category");
+    });
+});
+
+// ROTA PARA ATUALIZAR UMA CATEGORIA NO BANCO \\
+router.post("/category/update", (req, res) => {
+    var id = req.body.id;
+    var title = req.body.title;
+
+    Category.update({ title: title, slug: slugify(title) }, {
+        where: {
+            id: id
+        }
+    }).then(() => {
+        res.redirect("/admin/category");
+    });
+});
 
 module.exports = router;

@@ -1,21 +1,22 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const connection = require("./database/database");
 
-const categoryController = require("./category/CategoryController");
-const articlesController = require("./articles/ArticlesController");
+const categoriesController = require("./categories/CategoriesController");
+const articlesController = require("./articles/ArticlesController")
 
-const Articles = require("./articles/Articles");
-const Category = require("./category/Category");
+const Category = require("./categories/Category");
+const Article = require("./articles/Article");
 
-// CONFIGURANDOO VIEW ENGINE EJS PARA EXIBIR HTML \\
+
+// CONFIGURANDO A VIEW ENGINE \\
 app.set('view engine', 'ejs');
 
-// CONFIGURANDOO PARA ARQUIVOS STATIC IMG, CSS, JS \\
+// CONFIGURANDO ARQUIVOS STATIC \\
 app.use(express.static('public'));
 
-// CONFIGURANDOO BODY PARSER PARA TRABALHAR COM FORMULARIO \\
+// CONFIGURANDO O BODY PARSER \\
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -29,13 +30,16 @@ connection
     })
 
 // MINHAS ROTAS \\
-app.use("/", categoryController);
-app.use("/", articlesController);
+app.use("/", categoriesController);
+app.use("/",articlesController);
 
+
+// ROTA PRINCIPAL
 app.get("/", (req, res) => {
-    res.render("index");
-})
+    res.render("index")
+});
 
+// INICIALIZANDO O SERVIDOR \\
 app.listen(3000, () => {
-    console.log("Servidor iniciado com sucesso!");
-})
+    console.log("O servidor está rodando!");
+});
